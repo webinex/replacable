@@ -23,5 +23,7 @@ export function createKey(
     const char = CHARACTERS.charAt(position);
     chars.push(char);
   }
-  return prefix + '_' + chars.join('');
+
+  const suffix = chars.join('')
+  return `${prefix}_${suffix}`;
 }
