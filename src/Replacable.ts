@@ -6,4 +6,5 @@ export const Replacable = Object.assign(createReplacement, {
 });
 
 export { ReplacableComponent } from './ReplacableComponentType';
+export { Replaced } from './ReplacedType';
 export default Replacable;

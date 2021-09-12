@@ -6,7 +6,7 @@ import { useReplacement } from './UseReplacement';
 
 export function createReplacement<T extends React.ComponentType<any>>(
   DefaultComponent: T
-): ReplacableComponent<T> {
+): ReplacableComponent<React.ComponentType<Props<T>>> {
   const key = createKey(DefaultComponent);
 
   const renderer: FC<Props<T>> = (props) => {
@@ -22,5 +22,5 @@ export function createReplacement<T extends React.ComponentType<any>>(
   const replacement = renderer as ReplacableComponent<T>;
   replacement.key = key;
   replacement.default = DefaultComponent;
-  return replacement as ReplacableComponent<T>;
+  return replacement as any;
 }
